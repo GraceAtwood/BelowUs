@@ -36,6 +36,7 @@ namespace Assets.Source.Terrain
 
         private void Start()
         {
+            BuildWorld(20);
         }
 
         private void Update()
@@ -46,6 +47,17 @@ namespace Assets.Source.Terrain
         #endregion
 
         #region Methods
+
+        public void BuildWorld(int numChunks)
+        {
+            for (int x = 0 - numChunks / 2; x < numChunks / 2; x++)
+            {
+                for (int z = 0 - numChunks / 2; z < numChunks / 2; z++)
+                {
+                    CreateChunk(x * Chunk.ChunkSize, 0, z * Chunk.ChunkSize);
+                }
+            }
+        }
 
         /// <summary>
         /// Creates a chunk at the given position.
@@ -75,7 +87,7 @@ namespace Assets.Source.Terrain
                 {
                     for (int zi = 0; zi < Chunk.ChunkSize; zi++)
                     {
-                        newChunk.SetBlock(xi, yi, zi, new Blocks.Air());
+                        newChunk.SetBlock(xi, yi, zi, new Blocks.Grass());
                     }
                 }
             }
