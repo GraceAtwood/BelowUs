@@ -25,6 +25,8 @@ namespace Assets.Source.Terrain
         /// </summary>
         public GameObject ChunkPrefab;
 
+        public int WorldSize;
+
         /// <summary>
         /// The name of this world.
         /// </summary>
@@ -36,7 +38,7 @@ namespace Assets.Source.Terrain
 
         private void Start()
         {
-            BuildWorld(20);
+            BuildWorld(WorldSize);
         }
 
         private void Update()
@@ -48,6 +50,10 @@ namespace Assets.Source.Terrain
 
         #region Methods
 
+        /// <summary>
+        /// Creates the world based on world size.
+        /// </summary>
+        /// <param name="numChunks"></param>
         public void BuildWorld(int numChunks)
         {
             for (int x = 0 - numChunks / 2; x < numChunks / 2; x++)
