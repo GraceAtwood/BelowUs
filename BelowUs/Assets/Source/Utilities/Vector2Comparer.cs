@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace BelowUs.Assets.Source.Utilities
+namespace Assets.Source.Utilities
 {
     /// <summary>
     /// Compares two Vector2 objects' x and y components.
